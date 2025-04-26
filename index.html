@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0c0c0c; /* 極深色背景 */
+            background-color: #0c0c0c;
             color: #f5f5f5;
         }
         .container {
@@ -91,7 +91,7 @@
         .skill-list li:hover {
             transform: translateY(-6px) scale(1.03);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
-            background-color: #6b7280; /* Change hover color */
+            background-color: #6b7280;
         }
         .footer {
             background-color: #000000;
@@ -104,8 +104,31 @@
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
 
+        /* 自傳樣式 */
+        .bio-content {
+            background-color: #1a202c;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        .bio-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .bio-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
         /* 深色模式 */
-        .dark .bg-gray-100 { background-color: #1a202c; } /* 更深的灰色 */
+        .dark .bg-gray-100 { background-color: #1a202c; }
         .dark .text-gray-800 { color: #f5f5f5; }
         .dark .text-gray-600 { color: #d1d5db; }
         .dark .bg-white { background-color: #2d3748; }
@@ -114,7 +137,7 @@
         .dark .text-gray-900 { color: #fff; }
         .dark .dark\:text-white { color: #fff; }
         .dark .bg-gray-700 { background-color: #4a5568; }
-        .dark .hover\:bg-gray-600:hover { background-color: #6b7280; } /* Hover 時的背景色 */
+        .dark .hover\:bg-gray-600:hover { background-color: #6b7280; }
         .dark .text-blue-500 { color: #48bb78; }
         .dark .hover\:text-blue-700:hover { color: #38a169; }
         .dark .bg-gray-800 { background-color: #4a5568; }
@@ -155,6 +178,27 @@
 
     <main class="container py-8">
         <section class="section">
+            <h2 class="section-title">自傳</h2>
+            <div class="bio-content">
+                <h3 class="bio-title">求學經歷</h3>
+                <p class="bio-text">
+                    我是盧詳凱，目前就讀於靜宜大學資訊管理學系[二年級]。
+                    在大學期間，我積極參與課程學習，對資訊系統、資料庫管理、
+                    網路技術等領域產生濃厚興趣。
+                </p>
+                <h3 class="bio-title">技能與特質</h3>
+                <p class="bio-text">
+                    在技能方面，我了解[如：Java、Python、資料庫管理、網頁開發等]，
+                        並樂於學習新的技術。
+                        我個性積極主動、認真負責，
+                        具備良好的溝通能力和團隊合作精神。
+                </p>
+                <h3 class="bio-title">未來展望</h3>
+                <p class="bio-text">
+                    我對資訊科技這個領域很有熱忱，希望之後可以把學到的東西應用在工作上，
+                    為公司創造價值。
+                </p>
+            </div>
             <h2 class="section-title">興趣何倫碼測試結果</h2>
             <p class="text-lg text-gray-700 dark:text-gray-300">
                 我的興趣何倫碼為 A藝術型 x I研究型
@@ -253,10 +297,6 @@
                 <div class="contact-item">
                     <span>Discord:</span>
                     <a href="https://discord.com/users/your_discord_id" target="_blank" rel="noopener noreferrer">Zensom</a>
-                </div>
-                <div class="contact-item">
-                    <span>自傳:</span>
-                    <a href="./bio.html">查看我的自傳</a>
                 </div>
             </div>
         </section>
