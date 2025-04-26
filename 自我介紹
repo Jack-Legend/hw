@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的求職履歷</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0c0c; /* 極深色背景 */
+            color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .section {
+            margin-bottom: 5rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .profile-name {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #ff6700;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.1em;
+        }
+        .profile-description {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin-top: 1rem;
+            line-height: 1.7;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .contact-item span {
+            font-weight: 700;
+            margin-right: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        .contact-item a {
+            color: #48bb78;
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .contact-item a:hover {
+            color: #38a169;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .skill-list li {
+            font-size: 1.4rem;
+            padding: 1rem;
+            background-color: #2d3748;
+            border-radius: 0.5rem;
+            color: #ffffff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+            text-align: center;
+            border: 2px solid #4a5568;
+        }
+        .skill-list li:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+            background-color: #6b7280; /* Change hover color */
+        }
+        .footer {
+            background-color: #000000;
+            padding: 2.5rem;
+            margin-top: 5rem;
+            text-align: center;
+            color: #b0b0b0;
+            border-top: 2px solid #1a202c;
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 深色模式 */
+        .dark .bg-gray-100 { background-color: #1a202c; } /* 更深的灰色 */
+        .dark .text-gray-800 { color: #f5f5f5; }
+        .dark .text-gray-600 { color: #d1d5db; }
+        .dark .bg-white { background-color: #2d3748; }
+        .dark .dark\:bg-gray-800 { background-color: #4a5568; }
+        .dark .shadow-md { box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
+        .dark .text-gray-900 { color: #fff; }
+        .dark .dark\:text-white { color: #fff; }
+        .dark .bg-gray-700 { background-color: #4a5568; }
+        .dark .hover\:bg-gray-600:hover { background-color: #6b7280; } /* Hover 時的背景色 */
+        .dark .text-blue-500 { color: #48bb78; }
+        .dark .hover\:text-blue-700:hover { color: #38a169; }
+        .dark .bg-gray-800 { background-color: #4a5568; }
+        .dark .text-gray-700 { color: #d1d5db; }
+        .dark .dark\:text-gray-300 { color: #d1d5db; }
+        .dark .bg-white { background-color: #2d3748; }
+        .dark .dark\:bg-gray-800 { background-color: #4a5568; }
+        .dark .text-gray-900 { color: #fff; }
+        .dark .dark\:text-white { color: #fff; }
+        .dark .text-blue-500 { color: #48bb78; }
+        .dark .hover\:text-blue-700:hover { color: #38a169; }
+        .dark .text-blue-300 { color: #a7f3d0; }
+        .dark .dark\:hover\:text-blue-200:hover { color: #34d399; }
+        .dark .bg-gray-100 { background-color: #0c0c0c; }
+        .dark .dark\:bg-gray-900 { background-color: #000000; }
+        .dark .text-gray-600 { color: #d1d5db; }
+        .dark .dark\:text-gray-400 { color: #9ca3af; }
+        .dark .dark\:text-gray-300 { color: #d1d5db; }
+        .dark .dark\:bg-gray-700 { background-color: #4a5568; }
+        .dark .dark\:hover\:bg-gray-600:hover { background-color: #6b7280; }
+        .dark .text-gray-800 { color: #f5f5f5; }
+        .dark .dark\:text-gray-200 { color: #f5f5f5; }
+        .dark .bg-white { background-color: #2d3748; }
+        .dark .dark\:bg-gray-800 { background-color: #4a5568; }
+        .dark .border-gray-700 { border-color: #4a5568; }
+        .dark .text-gray-500 { color: #d1d5db; }
+        .dark .text-gray-400 { color: #9ca3af; }
+
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <header class="bg-white dark:bg-gray-800 shadow-md py-8">
+        <div class="container">
+            <h1 class="profile-name">我是 盧詳凱</h1>
+            <p class="profile-description">尋找前端工程師相關工作</p>
+        </div>
+    </header>
+
+    <main class="container py-8">
+        <section class="section">
+            <h2 class="section-title">興趣何倫碼測試結果</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300">
+                我的興趣何倫碼為 A藝術型 x I研究型
+            </p>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mt-4">
+                我希望能找到前端工程師相關的工作，並持續學習成長。
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">網路前端工程師介紹</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">工作內容</h3>
+                <ul class="list-disc list-inside space-y-3 text-lg text-gray-700 dark:text-gray-300 mt-2">
+                    <li>
+                        負責網站或應用程式的使用者介面開發，確保產品美觀、易用且功能完善。
+                    </li>
+                    <li>
+                        與設計師和後端工程師合作，共同完成產品開發目標。
+                    </li>
+                    <li>
+                        優化前端效能，提升使用者體驗。
+                    </li>
+                    <li>
+                        維護現有專案，並進行必要的更新和除錯。
+                    </li>
+                    <li>
+                        研究和應用新的前端技術，以提升開發效率和產品品質。
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    所需技能
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-lg text-gray-700 dark:text-gray-300">
+                    <li>
+                        熟悉 HTML、CSS、JavaScript 等前端基礎技術。
+                    </li>
+                    <li>
+                        熟悉至少一種主流前端框架，如 React、Vue 或 Angular。
+                    </li>
+                     <li>
+                        熟悉 Git 版本控制。
+                    </li>
+                    <li>
+                        了解 RESTful API 串接。
+                    </li>
+                    <li>
+                        具備良好的溝通能力和團隊合作精神。
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    加分條件
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-lg text-gray-700 dark:text-gray-300">
+                    <li>
+                       有 UI/UX 設計經驗。
+                    </li>
+                    <li>
+                        熟悉效能優化工具和方法。
+                    </li>
+                    <li>
+                       有開發大型專案的經驗。
+                    </li>
+                    <li>
+                        有開源專案貢獻經驗。
+                    </li>
+                   
+                </ul>
+            </div>
+            
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">技能</h2>
+            <ul class="skill-list">
+                <li>Java</li>
+                <li>基礎 Python 使用</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">聯絡方式</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                歡迎透過以下方式與我聯繫：
+            </p>
+            <div class="space-y-2">
+                <div class="contact-item">
+                    <span>Email:</span>
+                    <a href="mailto:0604lu@gmail.com">0604lu@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>Discord:</span>
+                    <a href="https://discord.com/users/your_discord_id" target="_blank" rel="noopener noreferrer">Zensom</a>
+                </div>
+                <div class="contact-item">
+                    <span>自傳:</span>
+                    <a href="./bio.html">查看我的自傳</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        &copy; 2024 盧詳凱。版權所有。
+    </footer>
+    <script>
+        // Optional: Dark mode toggle (requires Tailwind CSS)
+        const darkModeToggle = document.createElement("button");
+        darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`;
+        darkModeToggle.classList.add(
+            "dark-mode-toggle",
+            "fixed",
+            "top-4",
+            "right-4",
+            "bg-white",
+            "dark:bg-gray-700",
+            "rounded-full",
+            "p-2",
+            "shadow-md",
+            "hover:bg-gray-100",
+            "dark:hover:bg-gray-600"
+        );
+        document.body.appendChild(darkModeToggle);
+
+        darkModeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            if (document.documentElement.classList.contains("dark")) {
+                darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M12 3v1.5M12 22.5v-1.5M4.5 12H6M18 12h1.5M6.34 6.34l1.06 1.06M16.6 16.6l1.06 1.06M7.66 17.66l-1.06 1.06M17.94 6.06l-1.06 1.06"></path></svg>`; // Sun icon
+            } else {
+                darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`; // Moon icon
+            }
+        });
+    </script>
+</body>
+</html>
