@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的自傳</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <header class="bg-white dark:bg-gray-800 shadow-md py-6">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-semibold text-gray-900 dark:text-white">我的自傳</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">自傳</h2>
+            <div class="space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">求學經歷</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">
+                        我是盧詳凱，目前就讀於靜宜大學資訊管理學系[二年級]。
+                        在大學期間，我積極參與課程學習，對資訊系統、資料庫管理、
+                        網路技術等領域產生濃厚興趣。
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">技能與特質</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">
+                        在技能方面，我了解[如：Java、Python、資料庫管理、網頁開發等]，
+                        並樂於學習新的技術。
+                        我個性積極主動、認真負責，
+                        具備良好的溝通能力和團隊合作精神。
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">未來展望</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">
+                        我對資訊科技領域充滿熱情，希望能將所學應用於實際工作中，
+                        為企業創造價值。。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-gray-800 py-4 mt-8">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+            &copy; 2024 盧詳凱。版權所有。
+        </div>
+    </footer>
+    <script>
+        // Optional: Dark mode toggle (requires Tailwind CSS)
+        const darkModeToggle = document.createElement('button');
+        darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`;
+        darkModeToggle.classList.add('dark-mode-toggle', 'fixed', 'top-4', 'right-4', 'bg-white', 'dark:bg-gray-700', 'rounded-full', 'p-2', 'shadow-md', 'hover:bg-gray-100', 'dark:hover:bg-gray-600');
+        document.body.appendChild(darkModeToggle);
+
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M12 3v1.5M12 22.5v-1.5M4.5 12H6M18 12h1.5M6.34 6.34l1.06 1.06M16.6 16.6l1.06 1.06M7.66 17.66l-1.06 1.06M17.94 6.06l-1.06 1.06"></path></svg>`; // Sun icon
+            } else {
+                darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`; // Moon icon
+            }
+        });
+    </script>
+</body>
+</html>
